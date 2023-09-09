@@ -24,6 +24,7 @@ func main() {
 	r.Mount("/admin/", adminRouter)
 
 	apiRouter.Get("/healthz", readinessHandler)
+	apiRouter.Post("/validate_chirp", validateChirpHandler)
 	adminRouter.Get("/metrics", func(w http.ResponseWriter, r *http.Request) {
 		apiCfg.ServeHTTP(w, r)
 	})
