@@ -46,6 +46,7 @@ func main() {
 	apiRouter.Get("/chirps", getChirpHandler)
 	apiRouter.Get("/chirps/{id}", getChirpByIDHandler)
 	apiRouter.Post("/chirps", postChirpHandler)
+	apiRouter.Post("/users", postUserHandler)
 	adminRouter.Get("/metrics", func(w http.ResponseWriter, r *http.Request) {
 		apiCfg.ServeHTTP(w, r)
 	})
